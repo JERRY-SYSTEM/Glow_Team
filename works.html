@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover, user-scalable=no minimal-ui">
+  <title></title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link rel="shortcut icon" href="">
+  <link rel="stylesheet" id="css-main" href="./oneui.min-5.6.css">
+  <script src="https://npm.elemecdn.com/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="./env.js"></script>
+</head>
+<body>
+  <header id="page-header">
+    <div class="content-header">
+      <div class="d-flex align-items-center">
+        <button type="button" class="btn btn-sm btn-alt-secondary me-2 d-none d-lg-inline-block" onclick="javascript:history.back(-1);"><i class="fa fa-fw fa-sign-out-alt"></i> 返回</button>
+      </div>
+      <div class="d-flex align-items-center">
+        <div class="dropdown d-inline-block ms-2">
+          <button type="button" class="btn btn-sm btn-alt-secondary" id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-bell"></i><span class="text-primary">•</span>作品信息
+          </button>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0 border-0 fs-sm" aria-labelledby="page-header-notifications-dropdown">
+            <div class="p-2 bg-body-light border-bottom text-center rounded-top"><h5 class="dropdown-header text-uppercase">作品信息</h5></div>
+            <ul class="nav-items mb-0" id="inf">
+              <li><a class="text-dark d-flex py-2" href="javascript:void(0)">
+                <div class="flex-shrink-0 me-2 ms-3"><i class="fa fa-fw fa-check-circle text-success"></i></div>
+                <div class="flex-grow-1 pe-2"><div class="fw-semibold"></div></div>
+              </a></li>
+              <li><a class="text-dark d-flex py-2" href="javascript:void(0)">
+                <div class="flex-shrink-0 me-2 ms-3"><i class="fa fa-fw fa-check-circle text-success"></i></div>
+                <div class="flex-grow-1 pe-2"><div class="fw-semibold"></div></div>
+              </a></li>
+              <li><a class="text-dark d-flex py-2" href="javascript:void(0)">
+                <div class="flex-shrink-0 me-2 ms-3"><i class="fa fa-fw fa-check-circle text-success"></i></div>
+                <div class="flex-grow-1 pe-2"><div class="fw-semibold"></div></div>
+              </a></li>
+              <li><a class="text-dark d-flex py-2" href="javascript:void(0)">
+                <div class="flex-shrink-0 me-2 ms-3"><i class="fa fa-fw fa-check-circle text-success"></i></div>
+                <div class="flex-grow-1 pe-2"><div class="fw-semibold"></div></div>
+              </a></li>
+              <li><a class="text-dark d-flex py-2" href="javascript:void(0)">
+                <div class="flex-shrink-0 me-2 ms-3"><i class="fa fa-fw fa-check-circle text-success"></i></div>
+                <div class="flex-grow-1 pe-2"><div class="fw-semibold"></div></div>
+              </a></li>
+              <li><a class="text-dark d-flex py-2" href="javascript:void(0)">
+                <div class="flex-shrink-0 me-2 ms-3"><i class="fa fa-fw fa-check-circle text-success"></i></div>
+                <div class="flex-grow-1 pe-2"><div class="fw-semibold"></div></div>
+              </a></li>
+              <li><a class="text-dark d-flex py-2" href="javascript:void(0)">
+                <div class="flex-shrink-0 me-2 ms-3"><i class="fa fa-fw fa-check-circle text-success"></i></div>
+                <div class="flex-grow-1 pe-2"><div class="fw-semibold">作品状态：<font></font></div></div>
+              </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main id="main-container">
+    <div class="bg-image"><div class="bg-primary-dark-op"><div class="content content-full text-center pt-9 pb-8">
+      <h1 class="text-white mb-2"></h1>
+      <h2 class="h4 fw-normal text-white-75 mb-0"></h2>
+    </div></div></div>
+    <div class="bg-body-extra-light">
+      <div class="content content-boxed">
+        <div class="text-center fs-sm push"><span class="d-inline-block py-2 px-4 bg-body fw-medium rounded"><strong></strong></span></div>
+        <div class="row justify-content-center">
+          <div class="col-sm-8">
+            <article class="story">
+              <h3 class="fw-normal mt-5 mb-3 text-center">作品介绍</h3>
+              <h3 class="fw-normal mt-5 mb-3 text-center">图片预览</h3>
+              <div class="row g-sm items-push js-gallery push img-fluid-100" id="vi"></div>
+            </article>
+            <div class="mt-5 d-flex justify-content-between push">
+              <a class="btn btn-alt-primary" target="_blank"><i class="fa fa-heart me-1"></i> 前往体验</a>
+              <a class="btn btn-alt-secondary" target="_blank"><i class="fa fa-cloud-arrow-down"></i> 立即下载</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content content-boxed"><div class="row py-5"></div></div>
+  </main>
+  <footer id="page-footer" class="bg-body-light">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/viewerjs/1.11.6/viewer.min.css"><script src="https://cdn.staticfile.org/viewerjs/1.11.6/viewer.min.js"></script>
+  <script src="./works.js"></script>
+</body>
+</html>
