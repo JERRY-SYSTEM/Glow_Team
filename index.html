@@ -430,25 +430,42 @@
 window.createFireworks = createFireworks
   </script>
    <script>
-    const slides = document.querySelectorAll('.slides li');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-const dots = document.querySelector('.dots');
+const Fireworks = () => {
+  const fireworksColor = siteConfig('FIREWORKS_COLOR')
 
-let currentSlide = 0;
+  useEffect(() => {
+    // 异步加载
+    async function loadFireworks() {
+      loadExternalResource(
+        'https://cdn.bootcdn.net/ajax/libs/animejs/3.2.1/anime.min.js',
+        'js'
+      ).then(() => {
+        loadExternalResource('/js/fireworks.js', 'js').then(() => {
+          if (window.anime && window.createFireworks) {
+            window.createFireworks({
+              config: { colors: fireworksColor },
+              anime: window.anime
+            })
+          }
+        })
+      })
+    }
 
+    loadFireworks()
 
+    return () => {
+      // 在组件卸载时清理资源
+      const fireworksElements = document.getElementsByClassName('fireworks')
+      while (fireworksElements.length > 0) {
+        fireworksElements[0].parentNode.removeChild(fireworksElements[0])
+      }
+    }
+  }, [])
 
-    // Initialize fireworks effect after the page loads
-    window.onload = function() {
-      createFireworks({
-        config: {
-          colors: [[255, 255, 255], [255, 0, 0], [0, 255, 0], [0, 0, 255]],
-          // You can customize other configurations here...
-        },
-        anime: window.anime
-      });
-    };
+  return <></>
+}
+
+export default Fireworks
   </script>     
 </body>
 
