@@ -429,7 +429,27 @@
 
 window.createFireworks = createFireworks
   </script>
-      
+   <script>
+    const slides = document.querySelectorAll('.slides li');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+const dots = document.querySelector('.dots');
+
+let currentSlide = 0;
+
+
+
+    // Initialize fireworks effect after the page loads
+    window.onload = function() {
+      createFireworks({
+        config: {
+          colors: [[255, 255, 255], [255, 0, 0], [0, 255, 0], [0, 0, 255]],
+          // You can customize other configurations here...
+        },
+        anime: window.anime
+      });
+    };
+  </script>     
 </body>
 
 </html>
