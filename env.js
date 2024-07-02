@@ -12,7 +12,7 @@
 //主题CDN加速链接目录
 //注意：越快的CDN就越费钱，请把下面的链接换成自己的CDN！如果没有条件的站长可以解压 CDN资源.7z 到当前目录下然后填./themes/$t$.min-5.6.css
 //$t$代表主题名称，如amethyst
-themecss = "./themes/amethyst.min-5.6.css";
+themecss = "./themes/smooth.min-5.6.css";
 
 //主题自带插件CDN加速链接
 //同上，如果没有条件的站长可以解压 CDN资源.7z 到当前目录下然后填./oneui.app.min-5.6.js
