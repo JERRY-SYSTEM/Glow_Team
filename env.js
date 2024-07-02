@@ -44,7 +44,7 @@ modules = ["feature","hito","work","zone","member","contact","flinks"];
 
 //防止XXS扒站
 //true开启，false关闭
-fxxs = true;
+fxxs = false;
 
 //IE浏览器提示
 //true开启，false关闭
