@@ -31,10 +31,16 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+    .fireworks {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
 </style>
 </head>
 
-<body>
+<body class = 'fireworks'>
   <div id="page-container" class="page-header-fixed main-content-boxed">
     <header id="page-header">
       <div class="content-header">
@@ -134,7 +140,7 @@
           <div class="row mb-5">
             <div class="col-md-0 text-center">
               <h2 class="h1 fw-bold mb-2">
-                动 <span class="fw-normal">态</span>
+                <span class="fw-normal">动  态</span>
               </h2>
               <p class="fs-lg fw-medium text-muted mb-0">团队发展历史</p>
             </div>
@@ -147,7 +153,7 @@
         <div class="content content-full">
           <div class="py-5">
             <div class="row mb-5 text-center"><div class="col-md-0">
-              <h2 class="h1 fw-bold mb-2">成 <span class="fw-normal">员</span></h2>
+              <h2 class="h1 fw-bold mb-2"><span class="fw-normal">成 员</span></h2>
               <p class="fs-lg fw-medium text-muted mb-0">一群充满活力的の开发者.</p>
             </div></div>
             <div class="row items-push"></div>
@@ -423,18 +429,7 @@
 
 window.createFireworks = createFireworks
   </script>
-      <script>
-        // 页面加载完成后调用函数
-        window.onload = function() {
-            createFireworks({
-                config: {
-                    colors: [[255, 255, 255], [255, 0, 0], [0, 255, 0], [0, 0, 255]],
-                    // 其他配置...
-                },
-                anime: window.anime
-            });
-        };
-    </script>
+      
 </body>
 
 </html>
