@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover, user-scalable=no minimal-ui">
+  <title></title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link rel="shortcut icon" href="">
+  <link rel="stylesheet" id="css-main" href="./oneui.min-5.6.css">
+  <script src="https://npm.elemecdn.com/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="./env.js"></script>
+  <style>
+    /* 滚动条整体样式 */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+/* 滚动条滑块悬停效果 */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+    .fireworks {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+</style>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<body>
+  <div id="page-container" class="page-header-fixed main-content-boxed">
+    <header id="page-header">
+      <div class="content-header">
+        <div class="d-flex align-items-center"><a class="fw-bold fs-lg tracking-wider text-dual me-2" id="headtitle"></a>
+          <div class="fs-xs fw-semibold py-1 px-2 rounded-pill bg-body-dark text-dark">
+            <i class="fab fa-unity text-primary"></i>
+          </div>
+        </div>
+        <div class="d-flex align-items-center">
+          <!--顶栏跳转按钮-->
+          <ul class="nav-main nav-main-horizontal nav-main-hover d-none d-lg-block me-2"></ul>
+          <!--顶栏亮暗模式和主题修改-->
+          <button type="button" class="btn btn-alt-secondary me-1" data-toggle="layout" data-action="dark_mode_toggle"><i class="far fa-moon"></i></button>
+          <div class="dropdown">
+            <button type="button" class="btn btn-alt-secondary me-2" id="themecss" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-brush"></i></button>
+            <div class="dropdown-menu dropdown-menu-end fs-sm smini-hide border-0" aria-labelledby="themecss">
+              <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium active" data-toggle="theme" data-theme="default"><span>默认</span><i class="fa fa-circle text-default"></i></a>
+              <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium" data-toggle="theme" data-theme="amethyst"><span>少女风</span><i class="fa fa-circle text-amethyst"></i></a>
+
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item fw-medium" data-toggle="layout" data-action="header_style_light" href="javascript:void(0)"><span>顶栏浅色模式</span></a>
+              <a class="dropdown-item fw-medium" data-toggle="layout" data-action="header_style_dark" href="javascript:void(0)"><span>顶栏深色模式</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="page-header-loader" class="overlay-header bg-primary-lighter"><div class="content-header"><div class="w-100 text-center"><i class="fa fa-fw fa-circle-notch fa-spin text-primary"></i></div></div></div>
+    </header>
+    <main id="main-container">
+      <!--第一板块-->
+      <div id="topd" class="bg-body-extra-light bg-image">
+        <div class="content content-full"><div class="row g-0 justify-content-center text-center"><div class="col-md-10 pt-7 pb-5">
+          <!--一言-->
+          <div class="d-inline-flex align-items-center space-x-1 fs-sm badge bg-success-light text-success mb-2 p-2">
+            <span>「 <span id="jinrishici-sentence"></span>」</span>
+          </div>
+          <!--主标题-->
+          <h1 class="fs-2 fw-bold mb-3"></h1>
+          <p class="fs-5 fw-medium text-muted mb-4 mx-xl-8">
+            <!--子标题-->
+            <span class="text-body-color fw-semibold"></span>
+          </p>
+          <a class="btn btn-alt-primary py-2 px-3 m-1" data-toggle="click-ripple" href="javascript:void(0)" id="gst">
+            <i class="fa fa-fw fa-arrow-down opacity-50 me-1"></i> 现在开始
+          </a>
+        </div></div></div>
+      </div>
+      <!--About模块-->
+      <div id="feature">
+        <div class="content"><div class="row py-4 text-center">
+          <div class="col-6 col-md-4 col-xl-3">
+            <div class="item item-rounded my-3 item-1x mx-auto text-amethyst bg-amethyst-lighter push"><i class="fa-fw fa-2x"></i></div>
+            <h4 class="mb-2"></h4><p class="text-muted"></p>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 ">
+            <div class="item item-rounded my-3 item-1x mx-auto text-flat bg-flat-lighter push"><i class="fa-fw fa-2x"></i></div>
+            <h4 class="mb-2"></h4><p class="text-muted"></p>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 ">
+            <div class="item item-rounded my-3 item-1x mx-auto text-smooth bg-smooth-lighter push"><i class="fa-fw fa-2x"></i></div>
+            <h4 class="mb-2"></h4><p class="text-muted"></p>
+          </div>
+          <div class="col-6 col-md-4 col-xl-3 ">
+            <div class="item item-rounded my-3 item-1x mx-auto text-city bg-city-lighter push"><i class="fa-fw fa-2x"></i></div>
+            <h4 class="mb-2"></h4><p class="text-muted"></p>
+          </div>
+        </div></div>
+      </div>
+      <div id="hito">
+        <div class="content content-full"><div class="row py-5"><div class="order-md-0 col-md-0 text-center  align-items-center"><div>
+          <h2 class="h1 fw-bold mb-2">Hitokoto</h2>
+          <p class="fs-lg fw-medium text-muted mb-4" id="hitokoto_text">:D 获取中...</p>
+          <h3 class="h4 fw-bold mb-2" id="hitokoto_from">:D 获取中...</h3>
+        </div></div></div></div>
+      </div>
+      <!--作品模块-->
+      <div id="work">
+        <div class="content content-full">
+          <div class="py-5">
+            <div class="row mb-5">
+              <div class="col-md-0 text-center">
+                <h2 class="h1 fw-bold mb-2">
+                  作 <span class="fw-normal">品</span>
+                </h2>
+                <p class="fs-lg fw-medium text-muted mb-0">
+                  保持心脏震动 有人与你共鸣
+                </p>
+                <main id="main-container"></main>
+              </div>
+            </div>
+            <div class="content content-boxed text-center"><div class="row"></div></div>
+          </div>
+        </div>
+      </div>
+      <!-- 文章 -->
+      <div id="zone">
+        <div class="content content-full"><div class="py-5">
+          <div class="row mb-5">
+            <div class="col-md-0 text-center">
+              <h2 class="h1 fw-bold mb-2">
+                <span class="fw-normal">动  态</span>
+              </h2>
+              <p class="fs-lg fw-medium text-muted mb-0">团队发展历史</p>
+            </div>
+          </div>
+          <div class="content content-boxed text-center"><div class="row" id="zoneslick"></div></div>
+        </div></div>
+      </div>
+      <!-- 成员 -->
+      <div id="member">
+        <div class="content content-full">
+          <div class="py-5">
+            <div class="row mb-5 text-center"><div class="col-md-0">
+              <h2 class="h1 fw-bold mb-2"><span class="fw-normal">成 员</span></h2>
+              <p class="fs-lg fw-medium text-muted mb-0">一群充满活力的の开发者.</p>
+            </div></div>
+            <div class="row items-push"></div>
+          </div>
+        </div>
+      </div>
+      <!-- 联系方式 -->
+      <div id="contact">
+        <div class="content content-full">
+          <div class="py-5 py-md-4 text-center">
+            <h2 class="fw-bold mb-2">联系 <i class="fa fa-fw fa-heart text-city"></i> 方式</h2>
+            <p class="fs-lg fw-medium text-muted mb-4">
+              有问题欢迎联系我们
+            </p>
+            <a class="btn btn-warning py-2 px-3 m-1" data-toggle="click-ripple"><i class="nav-main-link-icon"></i></a>
+            <a class="btn btn-primary py-2 px-3 m-1" data-toggle="click-ripple"><i class="nav-main-link-icon"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- 友链 -->
+      <div id="flinks">
+        <div class="content content-full">
+          <div class="py-5">
+            <div class="row mb-5 text-center"><div class="col-md-0">
+              <h2 class="h1 fw-bold mb-2">友情 <span class="fw-normal">链接</span></h2>
+              <p class="fs-lg fw-medium text-muted mb-0">快来和我交朋友吧</p>
+            </div></div>
+            <div class="row items-push"></div>
+          </div>
+        </div>
+      </div>
+      
+      <footer class="bg-body-extra-light block-rounded" id="page-footer">
+        <div class="content content-full">
+          <div class="text-center">
+            <script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src=""></script>
+          </div>
+          <div class="row g-0 fs-sm border-top pt-3">
+            <div class="col-sm-6 order-sm-2 py-1 text-center text-sm-end" id="teamday"></div>
+            <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-start">
+              <a href="https://beian.miit.gov.cn" target="_blank" class="text fw-semibold"><span class="badge bg-success">
+                  <i class="fa fa-location-arrow me-1"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+      </div>
+    </main>
+    <!--访问时提示框-->
+    <button type="button" data-bs-toggle="modal" data-bs-target="#welmodal" style="display: none;"></button>
+    <div class="modal fade" id="welmodal" tabindex="-1" aria-labelledby="welmodal" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-popout" role="document"><div class="modal-content"><div class="block block-rounded block-transparent mb-0"><div class="block-header block-header-default">
+        <h3 class="block-title"></h3>
+        <div class="block-options"><button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-fw fa-times"></i></button></div>
+      </div>
+      <div class="block-content fs-sm"></div>
+      <div class="block-content block-content-full text-end bg-body"><button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">OK</button></div>
+    </div></div></div></div>
+  </div>
+  <!--Slick插件--><link rel="stylesheet" href="https://jprorwxhnlrnlj5q-static.micyjz.com/develop/YGKfApUWNUSO-brpKfUsDEhyO-GvUApKfKKUAU-jjBqrKjjnrorriklilr-jiBqrKjjiijroiqijjr/slick.css"><link rel="stylesheet" href="https://iqrorwxhnlrnlj5q-static.micyjz.com/develop/YGKfApUWNUSO-bgKfUANsZWTt-GvUApKfKKUAU-jnBqrKjjnroriioiqrr-jiBqrKjjiijroiqijjr/slick-theme.css"><script src="https://imrorwxhlnqqln5p-static.micyjz.com/develop/evUKpAfMaYJE-rdUKApDISRZO-GvUApKfKKUAU-jpBorKkjjrkiiilnjrm-joBqrKkjnrpiniojpii/slick.min.js"></script>
+  <script src="./index.js"></script>
+  <script>
+    fetch('https://v1.hitokoto.cn')
+      .then(response => response.json())
+      .then(data => {
+        const text = document.getElementById('hitokoto_text')
+        text.innerText = data.hitokoto
+        const from = document.getElementById('hitokoto_from')
+        var author = !!data.from ? data.from : "无名氏";
+        from.innerText = "—— " + (data.from_who || '') + "「" + author + "」"
+      })
+      .catch(console.error)
+    function createFireworks({ config, anime }) {
+  // 创建这个Canvas元素 <canvas id='fireworks' className='fireworks'></canvas> 给我代码
+  const canvasElement = document.createElement('canvas')
+  canvasElement.id = 'fireworks'
+  canvasElement.className = 'fireworks'
+  document.body.appendChild(canvasElement)
+
+  const defaultConfig = {
+    colors: config?.colors,
+    numberOfParticules: 20,
+    orbitRadius: {
+      min: 50,
+      max: 100
+    },
+    circleRadius: {
+      min: 10,
+      max: 20
+    },
+    diffuseRadius: {
+      min: 50,
+      max: 100
+    },
+    animeDuration: {
+      min: 900,
+      max: 1500
+    }
+  }
+  config = Object.assign(defaultConfig, config)
+
+  let pointerX = 0
+  let pointerY = 0
+
+  // sky blue
+  const colors = config.colors
+
+  const canvasEl = document.querySelector('.fireworks')
+  const ctx = canvasEl.getContext('2d')
+
+  /**
+   * 设置画布尺寸
+   */
+  function setCanvasSize(canvasEl) {
+    canvasEl.width = window.innerWidth
+    canvasEl.height = window.innerHeight
+    canvasEl.style.width = `${window.innerWidth}px`
+    canvasEl.style.height = `${window.innerHeight}px`
+  }
+
+  /**
+   * update pointer
+   * @param {TouchEvent} e
+   */
+  function updateCoords(e) {
+    pointerX =
+      e.clientX ||
+      (e?.touches[0] ? e.touches[0].clientX : e.changedTouches[0].clientX)
+    pointerY =
+      e.clientY ||
+      (e?.touches[0] ? e.touches[0].clientY : e.changedTouches[0].clientY)
+  }
+
+  function setParticuleDirection(p) {
+    const angle = (anime.random(0, 360) * Math.PI) / 180
+    const value = anime.random(
+      config.diffuseRadius.min,
+      config.diffuseRadius.max
+    )
+    const radius = [-1, 1][anime.random(0, 1)] * value
+    return {
+      x: p.x + radius * Math.cos(angle),
+      y: p.y + radius * Math.sin(angle)
+    }
+  }
+
+  /**
+   * 在指定位置创建粒子
+   * @param {number} x
+   * @param {number} y
+   * @returns
+   */
+  function createParticule(x, y) {
+    const p = {
+      x,
+      y,
+      color: `rgba(${colors[anime.random(0, colors.length - 1)]},${anime.random(
+        0.2,
+        0.8
+      )})`,
+      radius: anime.random(config.circleRadius.min, config.circleRadius.max),
+      endPos: null,
+      draw() {}
+    }
+    p.endPos = setParticuleDirection(p)
+    p.draw = function () {
+      ctx.beginPath()
+      ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, true)
+      ctx.fillStyle = p.color
+      ctx.fill()
+    }
+    return p
+  }
+
+  function createCircle(x, y) {
+    const p = {
+      x,
+      y,
+      color: '#000',
+      radius: 0.1,
+      alpha: 0.5,
+      lineWidth: 6,
+      draw() {}
+    }
+    p.draw = function () {
+      ctx.globalAlpha = p.alpha
+      ctx.beginPath()
+      ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, true)
+      ctx.lineWidth = p.lineWidth
+      ctx.strokeStyle = p.color
+      ctx.stroke()
+      ctx.globalAlpha = 1
+    }
+    return p
+  }
+
+  function renderParticule(anim) {
+    for (let i = 0; i < anim.animatables.length; i++) {
+      anim.animatables[i].target.draw()
+    }
+  }
+
+  function animateParticules(x, y) {
+    const circle = createCircle(x, y)
+    const particules = []
+    for (let i = 0; i < config.numberOfParticules; i++) {
+      particules.push(createParticule(x, y))
+    }
+
+    anime
+      .timeline()
+      .add({
+        targets: particules,
+        x(p) {
+          return p.endPos.x
+        },
+        y(p) {
+          return p.endPos.y
+        },
+        radius: 0.1,
+        duration: anime.random(
+          config.animeDuration.min,
+          config.animeDuration.max
+        ),
+        easing: 'easeOutExpo',
+        update: renderParticule
+      })
+      .add(
+        {
+          targets: circle,
+          radius: anime.random(config.orbitRadius.min, config.orbitRadius.max),
+          lineWidth: 0,
+          alpha: {
+            value: 0,
+            easing: 'linear',
+            duration: anime.random(600, 800)
+          },
+          duration: anime.random(1200, 1800),
+          easing: 'easeOutExpo',
+          update: renderParticule
+        },
+        0
+      )
+  }
+
+  const render = anime({
+    duration: Infinity,
+    update: () => {
+      ctx.clearRect(0, 0, canvasEl.width, canvasEl.height)
+    }
+  })
+
+  document.addEventListener(
+    'mousedown',
+    e => {
+      render.play()
+      updateCoords(e)
+      animateParticules(pointerX, pointerY)
+    },
+    false
+  )
+
+  setCanvasSize(canvasEl)
+  window.addEventListener(
+    'resize',
+    () => {
+      setCanvasSize(canvasEl)
+    },
+    false
+  )
+}
+
+window.createFireworks = createFireworks
+  </script>
+   <script>
+const Fireworks = () => {
+  const fireworksColor = siteConfig('FIREWORKS_COLOR')
+
+  useEffect(() => {
+    // 异步加载
+    async function loadFireworks() {
+      loadExternalResource(
+        'https://cdn.bootcdn.net/ajax/libs/animejs/3.2.1/anime.min.js',
+        'js'
+      ).then(() => {
+        loadExternalResource('/js/fireworks.js', 'js').then(() => {
+          if (window.anime && window.createFireworks) {
+            window.createFireworks({
+              config: { colors: fireworksColor },
+              anime: window.anime
+            })
+          }
+        })
+      })
+    }
+
+    loadFireworks()
+
+    return () => {
+      // 在组件卸载时清理资源
+      const fireworksElements = document.getElementsByClassName('fireworks')
+      while (fireworksElements.length > 0) {
+        fireworksElements[0].parentNode.removeChild(fireworksElements[0])
+      }
+    }
+  }, [])
+
+  return <></>
+}
+
+export default Fireworks
+  </script>     
+</body>
