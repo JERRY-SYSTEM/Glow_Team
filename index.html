@@ -10,8 +10,36 @@
   <link rel="stylesheet" id="css-main" href="./oneui.min-5.6.css">
   <script src="https://npm.elemecdn.com/jquery@3.6.0/dist/jquery.min.js"></script>
   <script src="./env.js"></script>
-</head>
+  <style>
+    /* 滚动条整体样式 */
+::-webkit-scrollbar {
+    width: 10px;
+}
 
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+/* 滚动条滑块悬停效果 */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+    .fireworks {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+</style>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <body>
   <div id="page-container" class="page-header-fixed main-content-boxed">
     <header id="page-header">
@@ -30,11 +58,8 @@
             <button type="button" class="btn btn-alt-secondary me-2" id="themecss" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-brush"></i></button>
             <div class="dropdown-menu dropdown-menu-end fs-sm smini-hide border-0" aria-labelledby="themecss">
               <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium active" data-toggle="theme" data-theme="default"><span>默认</span><i class="fa fa-circle text-default"></i></a>
-              <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium" data-toggle="theme" data-theme="amethyst"><span>紫色</span><i class="fa fa-circle text-amethyst"></i></a>
-              <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium" data-toggle="theme" data-theme="city"><span>红色</span><i class="fa fa-circle text-city"></i></a>
-              <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium" data-toggle="theme" data-theme="flat"><span>青色</span><i class="fa fa-circle text-flat"></i></a>
-              <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium" data-toggle="theme" data-theme="modern"><span>蓝色</span><i class="fa fa-circle text-modern"></i></a>
-              <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium" data-toggle="theme" data-theme="smooth"><span>粉色</span><i class="fa fa-circle text-smooth"></i></a>
+              <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium" data-toggle="theme" data-theme="amethyst"><span>少女风</span><i class="fa fa-circle text-amethyst"></i></a>
+
               <div class="dropdown-divider"></div>
               <a class="dropdown-item fw-medium" data-toggle="layout" data-action="header_style_light" href="javascript:void(0)"><span>顶栏浅色模式</span></a>
               <a class="dropdown-item fw-medium" data-toggle="layout" data-action="header_style_dark" href="javascript:void(0)"><span>顶栏深色模式</span></a>
@@ -103,6 +128,16 @@
                 <p class="fs-lg fw-medium text-muted mb-0">
                   保持心脏震动 有人与你共鸣
                 </p>
+                <div class="col-lg-4">
+                    <a class="block block-rounded block-link-pop overflow-hidden" href="./works.html?id=0">
+                      <img class="img-fluid" src="https://npm.elemecdn.com/zxmacc-staticr@v1.0.5/images/background/day02.png" alt="标题">
+                      <div class="block-content">
+                        <h4 class="mb-1">标题</h4>
+                        <p class="fs-sm fw-medium mb-2">• <strong>2023-12-13 14:15:16</strong> •</p>
+                        <p class="fs-sm text-muted">简介</p>
+                      </div>
+                    </a>
+                  </div>
               </div>
             </div>
             <div class="content content-boxed text-center"><div class="row"></div></div>
@@ -115,7 +150,7 @@
           <div class="row mb-5">
             <div class="col-md-0 text-center">
               <h2 class="h1 fw-bold mb-2">
-                动 <span class="fw-normal">态</span>
+                <span class="fw-normal">动  态</span>
               </h2>
               <p class="fs-lg fw-medium text-muted mb-0">团队发展历史</p>
             </div>
@@ -128,7 +163,7 @@
         <div class="content content-full">
           <div class="py-5">
             <div class="row mb-5 text-center"><div class="col-md-0">
-              <h2 class="h1 fw-bold mb-2">成 <span class="fw-normal">员</span></h2>
+              <h2 class="h1 fw-bold mb-2"><span class="fw-normal">成 员</span></h2>
               <p class="fs-lg fw-medium text-muted mb-0">一群充满活力的の开发者.</p>
             </div></div>
             <div class="row items-push"></div>
@@ -202,7 +237,245 @@
         from.innerText = "—— " + (data.from_who || '') + "「" + author + "」"
       })
       .catch(console.error)
-  </script>
-</body>
+    function createFireworks({ config, anime }) {
+  // 创建这个Canvas元素 <canvas id='fireworks' className='fireworks'></canvas> 给我代码
+  const canvasElement = document.createElement('canvas')
+  canvasElement.id = 'fireworks'
+  canvasElement.className = 'fireworks'
+  document.body.appendChild(canvasElement)
 
+  const defaultConfig = {
+    colors: config?.colors,
+    numberOfParticules: 20,
+    orbitRadius: {
+      min: 50,
+      max: 100
+    },
+    circleRadius: {
+      min: 10,
+      max: 20
+    },
+    diffuseRadius: {
+      min: 50,
+      max: 100
+    },
+    animeDuration: {
+      min: 900,
+      max: 1500
+    }
+  }
+  config = Object.assign(defaultConfig, config)
+
+  let pointerX = 0
+  let pointerY = 0
+
+  // sky blue
+  const colors = config.colors
+
+  const canvasEl = document.querySelector('.fireworks')
+  const ctx = canvasEl.getContext('2d')
+
+  /**
+   * 设置画布尺寸
+   */
+  function setCanvasSize(canvasEl) {
+    canvasEl.width = window.innerWidth
+    canvasEl.height = window.innerHeight
+    canvasEl.style.width = `${window.innerWidth}px`
+    canvasEl.style.height = `${window.innerHeight}px`
+  }
+
+  /**
+   * update pointer
+   * @param {TouchEvent} e
+   */
+  function updateCoords(e) {
+    pointerX =
+      e.clientX ||
+      (e?.touches[0] ? e.touches[0].clientX : e.changedTouches[0].clientX)
+    pointerY =
+      e.clientY ||
+      (e?.touches[0] ? e.touches[0].clientY : e.changedTouches[0].clientY)
+  }
+
+  function setParticuleDirection(p) {
+    const angle = (anime.random(0, 360) * Math.PI) / 180
+    const value = anime.random(
+      config.diffuseRadius.min,
+      config.diffuseRadius.max
+    )
+    const radius = [-1, 1][anime.random(0, 1)] * value
+    return {
+      x: p.x + radius * Math.cos(angle),
+      y: p.y + radius * Math.sin(angle)
+    }
+  }
+
+  /**
+   * 在指定位置创建粒子
+   * @param {number} x
+   * @param {number} y
+   * @returns
+   */
+  function createParticule(x, y) {
+    const p = {
+      x,
+      y,
+      color: `rgba(${colors[anime.random(0, colors.length - 1)]},${anime.random(
+        0.2,
+        0.8
+      )})`,
+      radius: anime.random(config.circleRadius.min, config.circleRadius.max),
+      endPos: null,
+      draw() {}
+    }
+    p.endPos = setParticuleDirection(p)
+    p.draw = function () {
+      ctx.beginPath()
+      ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, true)
+      ctx.fillStyle = p.color
+      ctx.fill()
+    }
+    return p
+  }
+
+  function createCircle(x, y) {
+    const p = {
+      x,
+      y,
+      color: '#000',
+      radius: 0.1,
+      alpha: 0.5,
+      lineWidth: 6,
+      draw() {}
+    }
+    p.draw = function () {
+      ctx.globalAlpha = p.alpha
+      ctx.beginPath()
+      ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, true)
+      ctx.lineWidth = p.lineWidth
+      ctx.strokeStyle = p.color
+      ctx.stroke()
+      ctx.globalAlpha = 1
+    }
+    return p
+  }
+
+  function renderParticule(anim) {
+    for (let i = 0; i < anim.animatables.length; i++) {
+      anim.animatables[i].target.draw()
+    }
+  }
+
+  function animateParticules(x, y) {
+    const circle = createCircle(x, y)
+    const particules = []
+    for (let i = 0; i < config.numberOfParticules; i++) {
+      particules.push(createParticule(x, y))
+    }
+
+    anime
+      .timeline()
+      .add({
+        targets: particules,
+        x(p) {
+          return p.endPos.x
+        },
+        y(p) {
+          return p.endPos.y
+        },
+        radius: 0.1,
+        duration: anime.random(
+          config.animeDuration.min,
+          config.animeDuration.max
+        ),
+        easing: 'easeOutExpo',
+        update: renderParticule
+      })
+      .add(
+        {
+          targets: circle,
+          radius: anime.random(config.orbitRadius.min, config.orbitRadius.max),
+          lineWidth: 0,
+          alpha: {
+            value: 0,
+            easing: 'linear',
+            duration: anime.random(600, 800)
+          },
+          duration: anime.random(1200, 1800),
+          easing: 'easeOutExpo',
+          update: renderParticule
+        },
+        0
+      )
+  }
+
+  const render = anime({
+    duration: Infinity,
+    update: () => {
+      ctx.clearRect(0, 0, canvasEl.width, canvasEl.height)
+    }
+  })
+
+  document.addEventListener(
+    'mousedown',
+    e => {
+      render.play()
+      updateCoords(e)
+      animateParticules(pointerX, pointerY)
+    },
+    false
+  )
+
+  setCanvasSize(canvasEl)
+  window.addEventListener(
+    'resize',
+    () => {
+      setCanvasSize(canvasEl)
+    },
+    false
+  )
+}
+
+window.createFireworks = createFireworks
+  </script>
+   <script>
+const Fireworks = () => {
+  const fireworksColor = siteConfig('FIREWORKS_COLOR')
+
+  useEffect(() => {
+    // 异步加载
+    async function loadFireworks() {
+      loadExternalResource(
+        'https://cdn.bootcdn.net/ajax/libs/animejs/3.2.1/anime.min.js',
+        'js'
+      ).then(() => {
+        loadExternalResource('/js/fireworks.js', 'js').then(() => {
+          if (window.anime && window.createFireworks) {
+            window.createFireworks({
+              config: { colors: fireworksColor },
+              anime: window.anime
+            })
+          }
+        })
+      })
+    }
+
+    loadFireworks()
+
+    return () => {
+      // 在组件卸载时清理资源
+      const fireworksElements = document.getElementsByClassName('fireworks')
+      while (fireworksElements.length > 0) {
+        fireworksElements[0].parentNode.removeChild(fireworksElements[0])
+      }
+    }
+  }, [])
+
+  return <></>
+}
+
+export default Fireworks
+  </script>     
+</body>
 </html>
