@@ -126,7 +126,112 @@
               <h4 class="mb-2">标题四</h4><p class="text-muted">内容四</p>
             </div>
           </div></div>
+    
         </div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .slideshow-container {
+        position: relative;
+        max-width: 800px;
+        margin: auto;
+        overflow: hidden;
+        border: 1px solid #ccc;
+    }
+    .slide {
+        display: none;
+        width: 100%;
+    }
+    .slide img {
+        width: 100%;
+        vertical-align: middle;
+    }
+    .dots {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .dot {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin: 0 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        transition: background-color 0.3s ease;
+    }
+    .active {
+        background-color: #717171;
+    }
+    .progress-bar {
+        height: 4px;
+        background-color: #4CAF50;
+        width: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: width 5s linear;
+    }
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    <div class="slide fade">
+        <img src="./114514.jpg" alt="Slide 1">
+        <div class="progress-bar"></div>
+    </div>
+    <div class="slide fade">
+        <img src="./114514.jpg" alt="Slide 2">
+        <div class="progress-bar"></div>
+    </div>
+    <div class="slide fade">
+        <img src="./114514.jpg" alt="Slide 3">
+        <div class="progress-bar"></div>
+    </div>
+
+    <div class="dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+
+<script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var slides = document.getElementsByClassName("slide");
+        var dots = document.getElementsByClassName("dot");
+        var progressBars = document.getElementsByClassName("progress-bar");
+
+        for (var i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+            dots[i].classList.remove("active");
+        }
+
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].classList.add("active");
+
+        var progressBar = progressBars[slideIndex - 1];
+        progressBar.style.width = "100%";
+        setTimeout(function() {
+            progressBar.style.width = "0";
+        }, 100);
+
+        setTimeout(showSlides, 5000); // Change image every 5 seconds
+    }
+</script>
+
+        
         <div id="hito" class="bg-body-extra-light">
           <div class="content content-full"><div class="row py-5"><div class="order-md-0 col-md-0 text-center  align-items-center"><div>
             <h2 class="h1 fw-bold mb-2">Hitokoto</h2>
