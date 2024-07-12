@@ -1,511 +1,584 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover, user-scalable=no minimal-ui">
-  <title></title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-7ymO4nGrkm372HoSbq1OY2DP4pEZnMiA+E0F3zPr+JQQtQ82gQ1HPY3QIVtztVua" crossorigin="anonymous"></script>
-  <meta name="keywords" content="">
-  <meta name="description" content="">
-  <link rel="shortcut icon" href="">
-  <link rel="stylesheet" id="css-main" href="./oneui.min-5.6.css">
-  <script src="https://npm.elemecdn.com/jquery@3.6.0/dist/jquery.min.js"></script>
-  <script src="./env.js"></script>
-  <style>
-    /* 滚动条整体样式 */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-/* 滚动条轨道 */
-::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.1);
-}
-
-/* 滚动条滑块 */
-::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 5px;
-}
-
-/* 滚动条滑块悬停效果 */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-    .fireworks {
-      position: absolute;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-    }
-</style>
-</head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-<body>
-  <div id="page-container" class="page-header-fixed main-content-boxed">
-    <header id="page-header">
-      <div class="content-header">
-        <div class="d-flex align-items-center"><a class="fw-bold fs-lg tracking-wider text-dual me-2" id="headtitle"></a>
-          <div class="fs-xs fw-semibold py-1 px-2 rounded-pill bg-body-dark text-dark">
-            <i class="fab fa-unity text-primary"></i>
+<html version="4"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover, user-scalable=no minimal-ui">
+    <title>xx团队官网</title>
+    <meta name="keywords" content="xx团队 xx工作室">
+    <meta name="description" content="xx团队的官网">
+    <link rel="shortcut icon" href="https://">
+    <link rel="stylesheet" id="css-main" href="./oneui.min-5.6.css">
+    <script src="https://npm.elemecdn.com/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="./env.js"></script>
+    <style>
+      /* 滚动条整体样式 */
+  ::-webkit-scrollbar {
+      width: 10px;
+  }
+  
+  /* 滚动条轨道 */
+  ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 滚动条滑块 */
+  ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 5px;
+  }
+  
+  /* 滚动条滑块悬停效果 */
+  ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+  }
+      .fireworks {
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+      }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script><script src="chrome-extension://ekkkldemlhnacnfegdihallelglbnhnl/js/page_finish.js"></script><style type="text/css">
+          [mt_node=trans_loading]::after{
+          content: '';
+          vertical-align: middle !important;
+          width: 1em !important;
+          height: 1em !important;
+          display: inline-block !important;
+          margin: 0 4px !important;
+          border: 2px rgba(0, 0, 0, 0.25) solid !important;
+          border-top: 2px rgba(0, 0, 0, 1) solid !important;
+          border-radius: 50% !important;
+          padding: 0 !important;
+          -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+          animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+          }
+  
+          @keyframes immersive-translate-loading-animation {
+              from {
+                  transform: rotate(0deg,0deg,0deg);
+              }
+              to {
+                  transform: rotate(359deg,0deg,0deg);
+              }
+          }
+      </style><style type="text/css">[mt_node^=trans]{display: none !important;}</style><script src="https://speed.ilink-tk.com/spd/tongji?start=1720343123509" type="text/javascript" async="" charset="utf-8"></script></head><fatkun-drop-panel style="display: none;"></fatkun-drop-panel>
+  
+  <body inmaintabuse="1">
+    <div id="page-container" class="page-header-fixed main-content-boxed">
+      <header id="page-header">
+        <div class="content-header">
+          <div class="d-flex align-items-center"><a class="fw-bold fs-lg tracking-wider text-dual me-2" id="headtitle">xx团队官网</a>
+            <div class="fs-xs fw-semibold py-1 px-2 rounded-pill bg-body-dark text-dark">
+              <i class="fab fa-unity text-primary"></i>
+            </div>
           </div>
-        </div>
-        <div class="d-flex align-items-center">
-          <!--顶栏跳转按钮-->
-          <ul class="nav-main nav-main-horizontal nav-main-hover d-none d-lg-block me-2"></ul>
-          <!--顶栏亮暗模式和主题修改-->
-          <button type="button" class="btn btn-alt-secondary me-1" data-toggle="layout" data-action="dark_mode_toggle"><i class="far fa-moon"></i></button>
-          <div class="dropdown">
-            <button type="button" class="btn btn-alt-secondary me-2" id="themecss" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-brush"></i></button>
-            <div class="dropdown-menu dropdown-menu-end fs-sm smini-hide border-0" aria-labelledby="themecss">
-              <a class="dropdown-item fw-medium" data-toggle="layout" data-action="header_style_light" href="javascript:void(0)"><span>顶栏浅色模式</span></a>
-              <a class="dropdown-item fw-medium" data-toggle="layout" data-action="header_style_dark" href="javascript:void(0)"><span>顶栏深色模式</span></a>
+          <div class="d-flex align-items-center">
+            <!--顶栏跳转按钮-->
+            <ul class="nav-main nav-main-horizontal nav-main-hover d-none d-lg-block me-2"><li class="nav-main-item"><a id="1topd" class="nav-main-link btn btn-alt-secondary px-3 d-none d-sm-inline-block" href="javascript:void(0)"><i class="fa fa-home"></i>&nbsp;<span class="nav-main-link-name"><strong>首页</strong></span></a></li><li class="nav-main-item"><a id="1work" class="nav-main-link btn btn-alt-secondary px-3 d-none d-sm-inline-block" href="javascript:void(0)"><i class="fa fa-boxes-stacked"></i>&nbsp;<span class="nav-main-link-name"><strong>作品</strong></span></a></li><li class="nav-main-item"><a id="1member" class="nav-main-link btn btn-alt-secondary px-3 d-none d-sm-inline-block" href="javascript:void(0)"><i class="fa fa-person-walking"></i>&nbsp;<span class="nav-main-link-name"><strong>成员</strong></span></a></li><li class="nav-main-item"><a id="1contact" class="nav-main-link btn btn-alt-secondary px-3 d-none d-sm-inline-block" href="javascript:void(0)"><i class="fab fa-qq"></i>&nbsp;<span class="nav-main-link-name"><strong>联系</strong></span></a></li></ul>
+            <!--顶栏亮暗模式和主题修改-->
+            <button type="button" class="btn btn-alt-secondary me-1" data-toggle="layout" data-action="dark_mode_toggle"><i class="far fa-moon"></i></button>
+            <div class="dropdown">
+              <button type="button" class="btn btn-alt-secondary me-2" id="themecss" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-brush"></i></button>
+              <div class="dropdown-menu dropdown-menu-end fs-sm smini-hide border-0" aria-labelledby="themecss">
+                <a class="dropdown-item fw-medium" data-toggle="layout" data-action="header_style_light" href="javascript:void(0)" data-theme="./themes/city.min-5.6.css"><span>顶栏浅色模式</span></a>
+                <a class="dropdown-item fw-medium" data-toggle="layout" data-action="header_style_dark" href="javascript:void(0)" data-theme="./themes/city.min-5.6.css"><span>顶栏深色模式</span></a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div id="page-header-loader" class="overlay-header bg-primary-lighter"><div class="content-header"><div class="w-100 text-center"><i class="fa fa-fw fa-circle-notch fa-spin text-primary"></i></div></div></div>
-    </header>
-    <main id="main-container">
-      <!--第一板块-->
-      <div id="topd" class="bg-body-extra-light bg-image">
-        <div class="content content-full"><div class="row g-0 justify-content-center text-center"><div class="col-md-10 pt-7 pb-5">
-          <!--一言-->
-          <div class="d-inline-flex align-items-center space-x-1 fs-sm badge bg-success-light text-success mb-2 p-2">
-            <span>「 <span id="jinrishici-sentence"></span>」</span>
+        <div id="page-header-loader" class="overlay-header bg-primary-lighter"><div class="content-header"><div class="w-100 text-center"><i class="fa fa-fw fa-circle-notch fa-spin text-primary"></i></div></div></div>
+      </header>
+      <main id="main-container">
+        <!--第一板块-->
+        <div id="topd" class="bg-body-extra-light bg-image" style="background-image: url(&quot;https://npm.elemecdn.com/zxmacc-staticr@v1.0.5/images/background/day02.png&quot;);">
+          <div class="content content-full"><div class="row g-0 justify-content-center text-center"><div class="col-md-10 pt-7 pb-5">
+            <!--一言-->
+            <div class="d-inline-flex align-items-center space-x-1 fs-sm badge bg-success-light text-success mb-2 p-2">
+              <span>「 <span id="jinrishici-sentence">江天一色无纤尘，皎皎空中孤月轮。</span>」</span>
+            </div>
+            <!--主标题-->
+            <h1 class="fs-2 fw-bold mb-3">xx团队</h1>
+            <p class="fs-5 fw-medium text-muted mb-4 mx-xl-8">
+              <!--子标题-->
+              <span class="text-body-color fw-semibold">Nothing</span>
+            </p>
+            <a class="btn btn-alt-primary py-2 px-3 m-1 js-click-ripple-enabled" data-toggle="click-ripple" href="javascript:void(0)" id="gst" style="overflow: hidden; position: relative; z-index: 1;">
+              <i class="fa fa-fw fa-arrow-down opacity-50 me-1"></i> 现在开始
+            </a>
+          </div></div></div>
+        </div>
+        <!--About模块-->
+        <div id="feature" class="bg-body-light">
+          <div class="content"><div class="row py-4 text-center">
+            <div class="col-6 col-md-4 col-xl-3">
+              <div class="item item-rounded my-3 item-1x mx-auto text-amethyst bg-amethyst-lighter push"><i class="fa-fw fa-2x fa fa-boxes"></i></div>
+              <h4 class="mb-2">标题一</h4><p class="text-muted">内容一</p>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3 ">
+              <div class="item item-rounded my-3 item-1x mx-auto text-flat bg-flat-lighter push"><i class="fa-fw fa-2x fa fa-laptop-code"></i></div>
+              <h4 class="mb-2">标题二</h4><p class="text-muted">内容二</p>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3 ">
+              <div class="item item-rounded my-3 item-1x mx-auto text-smooth bg-smooth-lighter push"><i class="fa-fw fa-2x fa fa-cloud"></i></div>
+              <h4 class="mb-2">标题三</h4><p class="text-muted">内容三</p>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3 ">
+              <div class="item item-rounded my-3 item-1x mx-auto text-city bg-city-lighter push"><i class="fa-fw fa-2x fa fa-user-lock"></i></div>
+              <h4 class="mb-2">标题四</h4><p class="text-muted">内容四</p>
+            </div>
+          </div></div>
+        </div>
+        <div id="hito" class="bg-body-extra-light">
+          <div class="content content-full"><div class="row py-5"><div class="order-md-0 col-md-0 text-center  align-items-center"><div>
+            <h2 class="h1 fw-bold mb-2">Hitokoto</h2>
+            <p class="fs-lg fw-medium text-muted mb-4" id="hitokoto_text">求你，保护那孩子，消除灾厄，抹除祸事。哪怕⋯⋯那是我自己……</p>
+            <h3 class="h4 fw-bold mb-2" id="hitokoto_from">—— 「食灵」</h3>
+          </div></div></div></div>
+        </div>
+        <!--作品模块-->
+        <div id="work" class="bg-body-light">
+          <div class="content content-full">
+            <div class="py-5">
+              <div class="row mb-5">
+                <div class="col-md-0 text-center">
+                  <h2 class="h1 fw-bold mb-2">
+                    作 <span class="fw-normal">品</span>
+                  </h2>
+                  <p class="fs-lg fw-medium text-muted mb-0">
+                    保持心脏震动 有人与你共鸣
+                  </p>
+                  <div class="col-lg-4">
+                      <a class="block block-rounded block-link-pop overflow-hidden" href="./works.html?id=0">
+                        <img class="img-fluid" src="https://npm.elemecdn.com/zxmacc-staticr@v1.0.5/images/background/day02.png" alt="标题">
+                        <div class="block-content">
+                          <h4 class="mb-1">标题</h4>
+                          <p class="fs-sm fw-medium mb-2">• <strong>2023-12-13 14:15:16</strong> •</p>
+                          <p class="fs-sm text-muted">简介</p>
+                        </div>
+                      </a>
+                    </div>
+                </div>
+              </div>
+              <div class="content content-boxed text-center"><div class="row"></div></div>
+            </div>
           </div>
-          <!--主标题-->
-          <h1 class="fs-2 fw-bold mb-3"></h1>
-          <p class="fs-5 fw-medium text-muted mb-4 mx-xl-8">
-            <!--子标题-->
-            <span class="text-body-color fw-semibold"></span>
-          </p>
-          <a class="btn btn-alt-primary py-2 px-3 m-1" data-toggle="click-ripple" href="javascript:void(0)" id="gst">
-            <i class="fa fa-fw fa-arrow-down opacity-50 me-1"></i> 现在开始
-          </a>
-        </div></div></div>
-      </div>
-      <!--About模块-->
-      <div id="feature">
-        <div class="content"><div class="row py-4 text-center">
-          <div class="col-6 col-md-4 col-xl-3">
-            <div class="item item-rounded my-3 item-1x mx-auto text-amethyst bg-amethyst-lighter push"><i class="fa-fw fa-2x"></i></div>
-            <h4 class="mb-2"></h4><p class="text-muted"></p>
-          </div>
-          <div class="col-6 col-md-4 col-xl-3 ">
-            <div class="item item-rounded my-3 item-1x mx-auto text-flat bg-flat-lighter push"><i class="fa-fw fa-2x"></i></div>
-            <h4 class="mb-2"></h4><p class="text-muted"></p>
-          </div>
-          <div class="col-6 col-md-4 col-xl-3 ">
-            <div class="item item-rounded my-3 item-1x mx-auto text-smooth bg-smooth-lighter push"><i class="fa-fw fa-2x"></i></div>
-            <h4 class="mb-2"></h4><p class="text-muted"></p>
-          </div>
-          <div class="col-6 col-md-4 col-xl-3 ">
-            <div class="item item-rounded my-3 item-1x mx-auto text-city bg-city-lighter push"><i class="fa-fw fa-2x"></i></div>
-            <h4 class="mb-2"></h4><p class="text-muted"></p>
-          </div>
-        </div></div>
-      </div>
-      <div id="hito">
-        <div class="content content-full"><div class="row py-5"><div class="order-md-0 col-md-0 text-center  align-items-center"><div>
-          <h2 class="h1 fw-bold mb-2">Hitokoto</h2>
-          <p class="fs-lg fw-medium text-muted mb-4" id="hitokoto_text">:D 获取中...</p>
-          <h3 class="h4 fw-bold mb-2" id="hitokoto_from">:D 获取中...</h3>
-        </div></div></div></div>
-      </div>
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- 轮播图指示器 -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-
-  <!-- 轮播图项目 -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="img1.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img src="img2.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img src="img3.jpg" alt="Third slide">
-    </div>
-  </div>
-
-  <!-- 轮播图控制器 -->
-  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-      </div>
-      <!--作品模块-->
-      <div id="work">
-        <div class="content content-full">
-          <div class="py-5">
+        </div>
+        <!-- 文章 -->
+        <div id="zone" class="bg-body-extra-light">
+          <div class="content content-full"><div class="py-5">
             <div class="row mb-5">
               <div class="col-md-0 text-center">
                 <h2 class="h1 fw-bold mb-2">
-                  作 <span class="fw-normal">品</span>
+                  <span class="fw-normal">动  态</span>
                 </h2>
-                <p class="fs-lg fw-medium text-muted mb-0">
-                  保持心脏震动 有人与你共鸣
-                </p>
-                <div class="col-lg-4">
-                    <a class="block block-rounded block-link-pop overflow-hidden" href="./works.html?id=0">
-                      <img class="img-fluid" src="https://npm.elemecdn.com/zxmacc-staticr@v1.0.5/images/background/day02.png" alt="标题">
-                      <div class="block-content">
-                        <h4 class="mb-1">标题</h4>
-                        <p class="fs-sm fw-medium mb-2">• <strong>2023-12-13 14:15:16</strong> •</p>
-                        <p class="fs-sm text-muted">简介</p>
-                      </div>
-                    </a>
-                  </div>
+                <p class="fs-lg fw-medium text-muted mb-0">团队发展历史</p>
               </div>
             </div>
-            <div class="content content-boxed text-center"><div class="row"></div></div>
-          </div>
-        </div>
-      </div>
-      <!-- 文章 -->
-      <div id="zone">
-        <div class="content content-full"><div class="py-5">
-          <div class="row mb-5">
-            <div class="col-md-0 text-center">
-              <h2 class="h1 fw-bold mb-2">
-                <span class="fw-normal">动  态</span>
-              </h2>
-              <p class="fs-lg fw-medium text-muted mb-0">团队发展历史</p>
+            <div class="content content-boxed text-center"><div class="row" id="zoneslick">
+          <div class="col-lg-4"><a class="block block-rounded block-link-pop overflow-hidden">
+            <img class="img-fluid" src="https://npm.elemecdn.com/zxmacc-staticr@v1.0.5/images/background/day02.png" alt="事件1">
+            <div class="block-content">
+              <h4 class="mb-1">事件1</h4>
+              <p class="fs-sm fw-medium mb-2">• <strong>2022-12-13</strong> •</p>
             </div>
-          </div>
-          <div class="content content-boxed text-center"><div class="row" id="zoneslick"></div></div>
+          </a></div>
+        
+          <div class="col-lg-4"><a class="block block-rounded block-link-pop overflow-hidden">
+            <img class="img-fluid" src="https://npm.elemecdn.com/zxmacc-staticr@v1.0.5/images/background/day02.png" alt="事件2">
+            <div class="block-content">
+              <h4 class="mb-1">事件2</h4>
+              <p class="fs-sm fw-medium mb-2">• <strong>2022-12-13</strong> •</p>
+            </div>
+          </a></div>
+        
+          <div class="col-lg-4"><a class="block block-rounded block-link-pop overflow-hidden">
+            <img class="img-fluid" src="https://npm.elemecdn.com/zxmacc-staticr@v1.0.5/images/background/day02.png" alt="事件3">
+            <div class="block-content">
+              <h4 class="mb-1">事件3</h4>
+              <p class="fs-sm fw-medium mb-2">• <strong>2022-12-13</strong> •</p>
+            </div>
+          </a></div>
+        
+          <div class="col-lg-4"><a class="block block-rounded block-link-pop overflow-hidden">
+            <img class="img-fluid" src="https://npm.elemecdn.com/zxmacc-staticr@v1.0.5/images/background/day02.png" alt="事件4">
+            <div class="block-content">
+              <h4 class="mb-1">事件4</h4>
+              <p class="fs-sm fw-medium mb-2">• <strong>2022-12-13</strong> •</p>
+            </div>
+          </a></div>
+        
+          <div class="col-lg-4"><a class="block block-rounded block-link-pop overflow-hidden">
+            <img class="img-fluid" src="https://npm.elemecdn.com/zxmacc-staticr@v1.0.5/images/background/day02.png" alt="事件5">
+            <div class="block-content">
+              <h4 class="mb-1">事件5</h4>
+              <p class="fs-sm fw-medium mb-2">• <strong>2022-12-13</strong> •</p>
+            </div>
+          </a></div>
         </div></div>
-      </div>
-      <!-- 成员 -->
-      <div id="member">
-        <div class="content content-full">
-          <div class="py-5">
-            <div class="row mb-5 text-center"><div class="col-md-0">
-              <h2 class="h1 fw-bold mb-2"><span class="fw-normal">成 员</span></h2>
-              <p class="fs-lg fw-medium text-muted mb-0">一群充满活力的の开发者.</p>
-            </div></div>
-            <div class="row items-push"></div>
-          </div>
+          </div></div>
         </div>
-      </div>
-      <!-- 联系方式 -->
-      <div id="contact">
-        <div class="content content-full">
-          <div class="py-5 py-md-4 text-center">
-            <h2 class="fw-bold mb-2">联系 <i class="fa fa-fw fa-heart text-city"></i> 方式</h2>
-            <p class="fs-lg fw-medium text-muted mb-4">
-              有问题欢迎联系我们
-            </p>
-            <a class="btn btn-warning py-2 px-3 m-1" data-toggle="click-ripple"><i class="nav-main-link-icon"></i></a>
-            <a class="btn btn-primary py-2 px-3 m-1" data-toggle="click-ripple"><i class="nav-main-link-icon"></i></a>
+        <!-- 成员 -->
+        <div id="member" class="bg-body-light">
+          <div class="content content-full">
+            <div class="py-5">
+              <div class="row mb-5 text-center"><div class="col-md-0">
+                <h2 class="h1 fw-bold mb-2"><span class="fw-normal">成 员</span></h2>
+                <p class="fs-lg fw-medium text-muted mb-0">一群充满活力的の开发者.</p>
+              </div></div>
+              <div class="row items-push">
+          <div class="col-md-6 col-xl-3" style="margin-top: 20px;">
+            <div class="block block-rounded text-center bg-image" style="background-image: url('https://npm.elemecdn.com/zxmacc-staticr@v1.0.5/images/background/day02.png');" href="javascript:void(0)">
+              <div class="block-content block-content-full">
+                <img class="img-avatar img-avatar-thumb" src="https://q.qlogo.cn/headimg_dl?dst_uin=1814669296&amp;spec=640" alt="XXX">
+              </div>
+              <div class="block-content block-content-full bg-primary-dark-op">
+                <p class="fw-semibold text-white mb-0">XXX</p>
+                <p class="fs-sm text-white-75 mb-2">成员1</p><a class="btn btn-sm btn-alt-primary me-1 js-bs-tooltip-enabled" href="https://wpa.qq.com/msgrd?v=3&amp;uin=88888888&amp;site=qq&amp;menu=yes&amp;jumpflag=1"><i class="fab fa-fw fa-qq"></i></a><a class="btn btn-sm btn-alt-primary me-1 js-bs-tooltip-enabled" href="https://baidu.com"><i class="fa fa-fw fa-link"></i></a><a class="btn btn-sm btn-alt-primary me-1 js-bs-tooltip-enabled" href="mailto:xxx@example.com"><i class="fab fa-fw fa-google"></i></a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <!-- 友链 -->
-      <div id="flinks">
-        <div class="content content-full">
-          <div class="py-5">
-            <div class="row mb-5 text-center"><div class="col-md-0">
-              <h2 class="h1 fw-bold mb-2">友情 <span class="fw-normal">链接</span></h2>
-              <p class="fs-lg fw-medium text-muted mb-0">快来和我交朋友吧</p>
-            </div></div>
-            <div class="row items-push"></div>
-          </div>
-        </div>
-      </div>
-      
-      <footer class="bg-body-extra-light block-rounded" id="page-footer">
-        <div class="content content-full">
-          <div class="text-center">
-            <script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src=""></script>
-          </div>
-          <div class="row g-0 fs-sm border-top pt-3">
-            <div class="col-sm-6 order-sm-2 py-1 text-center text-sm-end" id="teamday"></div>
-            <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-start">
-              <a href="https://beian.miit.gov.cn" target="_blank" class="text fw-semibold"><span class="badge bg-success">
-                  <i class="fa fa-location-arrow me-1"></i></span>
-              </a>
+          <div class="col-md-6 col-xl-3" style="margin-top: 20px;">
+            <div class="block block-rounded text-center bg-image" style="background-image: url('https://npm.elemecdn.com/zxmacc-staticr@v1.0.5/images/background/day02.png');" href="javascript:void(0)">
+              <div class="block-content block-content-full">
+                <img class="img-avatar img-avatar-thumb" src="https://q.qlogo.cn/headimg_dl?dst_uin=1814669296&amp;spec=640" alt="XXX">
+              </div>
+              <div class="block-content block-content-full bg-primary-dark-op">
+                <p class="fw-semibold text-white mb-0">XXX</p>
+                <p class="fs-sm text-white-75 mb-2">成员2</p><a class="btn btn-sm btn-alt-primary me-1 js-bs-tooltip-enabled" href="https://wpa.qq.com/msgrd?v=3&amp;uin=https://wpa.qq.com/msgrd?v=3&amp;uin=888888&amp;site=qq&amp;menu=yes&amp;jumpflag=1&amp;site=qq&amp;menu=yes&amp;jumpflag=1"><i class="fab fa-fw fa-qq"></i></a><a class="btn btn-sm btn-alt-primary me-1 js-bs-tooltip-enabled" href="https://baidu.com"><i class="fa fa-fw fa-link"></i></a><a class="btn btn-sm btn-alt-primary me-1 js-bs-tooltip-enabled" href="mailto:xxx@example.com"><i class="fab fa-fw fa-google"></i></a>
+              </div>
+            </div>
+          </div></div>
             </div>
           </div>
         </div>
-      </footer>
-      </div>
-    </main>
-    <!--访问时提示框-->
-    <button type="button" data-bs-toggle="modal" data-bs-target="#welmodal" style="display: none;"></button>
-    <div class="modal fade" id="welmodal" tabindex="-1" aria-labelledby="welmodal" style="display: none;" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-popout" role="document"><div class="modal-content"><div class="block block-rounded block-transparent mb-0"><div class="block-header block-header-default">
-        <h3 class="block-title"></h3>
-        <div class="block-options"><button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-fw fa-times"></i></button></div>
-      </div>
-      <div class="block-content fs-sm"></div>
-      <div class="block-content block-content-full text-end bg-body"><button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">OK</button></div>
-    </div></div></div></div>
-  </div>
-  <!--Slick插件--><link rel="stylesheet" href="https://jprorwxhnlrnlj5q-static.micyjz.com/develop/YGKfApUWNUSO-brpKfUsDEhyO-GvUApKfKKUAU-jjBqrKjjnrorriklilr-jiBqrKjjiijroiqijjr/slick.css"><link rel="stylesheet" href="https://iqrorwxhnlrnlj5q-static.micyjz.com/develop/YGKfApUWNUSO-bgKfUANsZWTt-GvUApKfKKUAU-jnBqrKjjnroriioiqrr-jiBqrKjjiijroiqijjr/slick-theme.css"><script src="https://imrorwxhlnqqln5p-static.micyjz.com/develop/evUKpAfMaYJE-rdUKApDISRZO-GvUApKfKKUAU-jpBorKkjjrkiiilnjrm-joBqrKkjnrpiniojpii/slick.min.js"></script>
-  <script src="./index.js"></script>
-  <script>
-    fetch('https://v1.hitokoto.cn')
-      .then(response => response.json())
-      .then(data => {
-        const text = document.getElementById('hitokoto_text')
-        text.innerText = data.hitokoto
-        const from = document.getElementById('hitokoto_from')
-        var author = !!data.from ? data.from : "无名氏";
-        from.innerText = "—— " + (data.from_who || '') + "「" + author + "」"
-      })
-      .catch(console.error)
-    function createFireworks({ config, anime }) {
-  // 创建这个Canvas元素 <canvas id='fireworks' className='fireworks'></canvas> 给我代码
-  const canvasElement = document.createElement('canvas')
-  canvasElement.id = 'fireworks'
-  canvasElement.className = 'fireworks'
-  document.body.appendChild(canvasElement)
-
-  const defaultConfig = {
-    colors: config?.colors,
-    numberOfParticules: 20,
-    orbitRadius: {
-      min: 50,
-      max: 100
-    },
-    circleRadius: {
-      min: 10,
-      max: 20
-    },
-    diffuseRadius: {
-      min: 50,
-      max: 100
-    },
-    animeDuration: {
-      min: 900,
-      max: 1500
-    }
-  }
-  config = Object.assign(defaultConfig, config)
-
-  let pointerX = 0
-  let pointerY = 0
-
-  // sky blue
-  const colors = config.colors
-
-  const canvasEl = document.querySelector('.fireworks')
-  const ctx = canvasEl.getContext('2d')
-
-  /**
-   * 设置画布尺寸
-   */
-  function setCanvasSize(canvasEl) {
-    canvasEl.width = window.innerWidth
-    canvasEl.height = window.innerHeight
-    canvasEl.style.width = `${window.innerWidth}px`
-    canvasEl.style.height = `${window.innerHeight}px`
-  }
-
-  /**
-   * update pointer
-   * @param {TouchEvent} e
-   */
-  function updateCoords(e) {
-    pointerX =
-      e.clientX ||
-      (e?.touches[0] ? e.touches[0].clientX : e.changedTouches[0].clientX)
-    pointerY =
-      e.clientY ||
-      (e?.touches[0] ? e.touches[0].clientY : e.changedTouches[0].clientY)
-  }
-
-  function setParticuleDirection(p) {
-    const angle = (anime.random(0, 360) * Math.PI) / 180
-    const value = anime.random(
-      config.diffuseRadius.min,
-      config.diffuseRadius.max
-    )
-    const radius = [-1, 1][anime.random(0, 1)] * value
-    return {
-      x: p.x + radius * Math.cos(angle),
-      y: p.y + radius * Math.sin(angle)
-    }
-  }
-
-  /**
-   * 在指定位置创建粒子
-   * @param {number} x
-   * @param {number} y
-   * @returns
-   */
-  function createParticule(x, y) {
-    const p = {
-      x,
-      y,
-      color: `rgba(${colors[anime.random(0, colors.length - 1)]},${anime.random(
-        0.2,
-        0.8
-      )})`,
-      radius: anime.random(config.circleRadius.min, config.circleRadius.max),
-      endPos: null,
-      draw() {}
-    }
-    p.endPos = setParticuleDirection(p)
-    p.draw = function () {
-      ctx.beginPath()
-      ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, true)
-      ctx.fillStyle = p.color
-      ctx.fill()
-    }
-    return p
-  }
-
-  function createCircle(x, y) {
-    const p = {
-      x,
-      y,
-      color: '#000',
-      radius: 0.1,
-      alpha: 0.5,
-      lineWidth: 6,
-      draw() {}
-    }
-    p.draw = function () {
-      ctx.globalAlpha = p.alpha
-      ctx.beginPath()
-      ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, true)
-      ctx.lineWidth = p.lineWidth
-      ctx.strokeStyle = p.color
-      ctx.stroke()
-      ctx.globalAlpha = 1
-    }
-    return p
-  }
-
-  function renderParticule(anim) {
-    for (let i = 0; i < anim.animatables.length; i++) {
-      anim.animatables[i].target.draw()
-    }
-  }
-
-  function animateParticules(x, y) {
-    const circle = createCircle(x, y)
-    const particules = []
-    for (let i = 0; i < config.numberOfParticules; i++) {
-      particules.push(createParticule(x, y))
-    }
-
-    anime
-      .timeline()
-      .add({
-        targets: particules,
-        x(p) {
-          return p.endPos.x
-        },
-        y(p) {
-          return p.endPos.y
-        },
-        radius: 0.1,
-        duration: anime.random(
-          config.animeDuration.min,
-          config.animeDuration.max
-        ),
-        easing: 'easeOutExpo',
-        update: renderParticule
-      })
-      .add(
-        {
-          targets: circle,
-          radius: anime.random(config.orbitRadius.min, config.orbitRadius.max),
-          lineWidth: 0,
-          alpha: {
-            value: 0,
-            easing: 'linear',
-            duration: anime.random(600, 800)
-          },
-          duration: anime.random(1200, 1800),
-          easing: 'easeOutExpo',
-          update: renderParticule
-        },
-        0
-      )
-  }
-
-  const render = anime({
-    duration: Infinity,
-    update: () => {
-      ctx.clearRect(0, 0, canvasEl.width, canvasEl.height)
-    }
-  })
-
-  document.addEventListener(
-    'mousedown',
-    e => {
-      render.play()
-      updateCoords(e)
-      animateParticules(pointerX, pointerY)
-    },
-    false
-  )
-
-  setCanvasSize(canvasEl)
-  window.addEventListener(
-    'resize',
-    () => {
-      setCanvasSize(canvasEl)
-    },
-    false
-  )
-}
-
-window.createFireworks = createFireworks
-  </script>
-   <script>
-const Fireworks = () => {
-  const fireworksColor = siteConfig('FIREWORKS_COLOR')
-
-  useEffect(() => {
-    // 异步加载
-    async function loadFireworks() {
-      loadExternalResource(
-        'https://cdn.bootcdn.net/ajax/libs/animejs/3.2.1/anime.min.js',
-        'js'
-      ).then(() => {
-        loadExternalResource('/js/fireworks.js', 'js').then(() => {
-          if (window.anime && window.createFireworks) {
-            window.createFireworks({
-              config: { colors: fireworksColor },
-              anime: window.anime
-            })
-          }
+        <!-- 联系方式 -->
+        <div id="contact" class="bg-body-extra-light">
+          <div class="content content-full">
+            <div class="py-5 py-md-4 text-center">
+              <h2 class="fw-bold mb-2">联系 <i class="fa fa-fw fa-heart text-city"></i> 方式</h2>
+              <p class="fs-lg fw-medium text-muted mb-4">
+                有问题欢迎联系我们
+              </p>
+              <a class="btn btn-warning py-2 px-3 m-1 js-click-ripple-enabled" data-toggle="click-ripple" href="https://im.qq.com" style="overflow: hidden; position: relative; z-index: 1;"><i class="nav-main-link-icon fab fa-qq"></i>&nbsp;QQ群</a>
+              <a class="btn btn-primary py-2 px-3 m-1 js-click-ripple-enabled" data-toggle="click-ripple" href="mailto:xxx@example.com" style="overflow: hidden; position: relative; z-index: 1;"><i class="nav-main-link-icon fab fa-google"></i>&nbsp;邮箱</a>
+            </div>
+          </div>
+        </div>
+        <!-- 友链 -->
+        <div id="flinks" class="bg-body-light">
+          <div class="content content-full">
+            <div class="py-5">
+              <div class="row mb-5 text-center"><div class="col-md-0">
+                <h2 class="h1 fw-bold mb-2">友情 <span class="fw-normal">链接</span></h2>
+                <p class="fs-lg fw-medium text-muted mb-0">快来和我交朋友吧</p>
+              </div></div>
+              <div class="row items-push">
+          <div class="col-md-6 col-xl-4">
+            <a class="block block-rounded block-link-pop" target="_blank" href="https://baidu.com">
+              <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                <img class="img-avatar img-avatar48" src="https://www.baidu.com/favicon.ico" alt="Web Favicon">
+                <div class="ms-3 text-end">
+                  <p class="fw-semibold mb-0">示例(百度1)</p>
+                  <p class="fs-sm fw-medium text-muted mb-0">懂得都懂</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <a class="block block-rounded block-link-pop" target="_blank" href="https://baidu.com">
+              <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                <img class="img-avatar img-avatar48" src="https://www.baidu.com/favicon.ico" alt="Web Favicon">
+                <div class="ms-3 text-end">
+                  <p class="fw-semibold mb-0">示例(百度2)</p>
+                  <p class="fs-sm fw-medium text-muted mb-0">懂得都懂</p>
+                </div>
+              </div>
+            </a>
+          </div></div>
+            </div>
+          </div>
+        </div>
+        
+        <footer class="bg-body-extra-light block-rounded" id="page-footer">
+          <div class="content content-full">
+            <div class="text-center">
+              <script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src=""></script>
+            </div>
+            <div class="row g-0 fs-sm border-top pt-3">
+              <div class="col-sm-6 order-sm-2 py-1 text-center text-sm-end" id="teamday">© 2022 - <span data-toggle="year-copy"></span><a class="fw-semibold text" href="https://zhanghanzhe666.github.io"> xx团队 </a></div>
+              <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-start">
+                <a href="https://beian.miit.gov.cn" target="_blank" class="text fw-semibold"><span class="badge bg-success">
+                    <i class="fa fa-location-arrow me-1"></i>无备案</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
+        </main></div>
+      
+      <!--访问时提示框-->
+      <button type="button" data-bs-toggle="modal" data-bs-target="#welmodal" style="display: none;"></button>
+      <div class="modal fade" id="welmodal" tabindex="-1" aria-labelledby="welmodal" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-popout" role="document"><div class="modal-content"><div class="block block-rounded block-transparent mb-0"><div class="block-header block-header-default">
+          <h3 class="block-title"></h3>
+          <div class="block-options"><button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-fw fa-times"></i></button></div>
+        </div>
+        <div class="block-content fs-sm"></div>
+        <div class="block-content block-content-full text-end bg-body"><button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">OK</button></div>
+      </div></div></div></div>
+    
+    <!--Slick插件--><link rel="stylesheet" href="https://jprorwxhnlrnlj5q-static.micyjz.com/develop/YGKfApUWNUSO-brpKfUsDEhyO-GvUApKfKKUAU-jjBqrKjjnrorriklilr-jiBqrKjjiijroiqijjr/slick.css"><link rel="stylesheet" href="https://iqrorwxhnlrnlj5q-static.micyjz.com/develop/YGKfApUWNUSO-bgKfUANsZWTt-GvUApKfKKUAU-jnBqrKjjnroriioiqrr-jiBqrKjjiijroiqijjr/slick-theme.css"><script src="https://imrorwxhlnqqln5p-static.micyjz.com/develop/evUKpAfMaYJE-rdUKApDISRZO-GvUApKfKKUAU-jpBorKkjjrkiiilnjrm-joBqrKkjnrpiniojpii/slick.min.js"></script>
+    <script src="./index.js"></script>
+    <script>
+      fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+          const text = document.getElementById('hitokoto_text')
+          text.innerText = data.hitokoto
+          const from = document.getElementById('hitokoto_from')
+          var author = !!data.from ? data.from : "无名氏";
+          from.innerText = "—— " + (data.from_who || '') + "「" + author + "」"
         })
-      })
-    }
-
-    loadFireworks()
-
-    return () => {
-      // 在组件卸载时清理资源
-      const fireworksElements = document.getElementsByClassName('fireworks')
-      while (fireworksElements.length > 0) {
-        fireworksElements[0].parentNode.removeChild(fireworksElements[0])
+        .catch(console.error)
+      function createFireworks({ config, anime }) {
+    // 创建这个Canvas元素 <canvas id='fireworks' className='fireworks'></canvas> 给我代码
+    const canvasElement = document.createElement('canvas')
+    canvasElement.id = 'fireworks'
+    canvasElement.className = 'fireworks'
+    document.body.appendChild(canvasElement)
+  
+    const defaultConfig = {
+      colors: config?.colors,
+      numberOfParticules: 20,
+      orbitRadius: {
+        min: 50,
+        max: 100
+      },
+      circleRadius: {
+        min: 10,
+        max: 20
+      },
+      diffuseRadius: {
+        min: 50,
+        max: 100
+      },
+      animeDuration: {
+        min: 900,
+        max: 1500
       }
     }
-  }, [])
-
-  return <></>
-}
-
-export default Fireworks
-  </script>     
-</body>
-</html>
+    config = Object.assign(defaultConfig, config)
+  
+    let pointerX = 0
+    let pointerY = 0
+  
+    // sky blue
+    const colors = config.colors
+  
+    const canvasEl = document.querySelector('.fireworks')
+    const ctx = canvasEl.getContext('2d')
+  
+    /**
+     * 设置画布尺寸
+     */
+    function setCanvasSize(canvasEl) {
+      canvasEl.width = window.innerWidth
+      canvasEl.height = window.innerHeight
+      canvasEl.style.width = `${window.innerWidth}px`
+      canvasEl.style.height = `${window.innerHeight}px`
+    }
+  
+    /**
+     * update pointer
+     * @param {TouchEvent} e
+     */
+    function updateCoords(e) {
+      pointerX =
+        e.clientX ||
+        (e?.touches[0] ? e.touches[0].clientX : e.changedTouches[0].clientX)
+      pointerY =
+        e.clientY ||
+        (e?.touches[0] ? e.touches[0].clientY : e.changedTouches[0].clientY)
+    }
+  
+    function setParticuleDirection(p) {
+      const angle = (anime.random(0, 360) * Math.PI) / 180
+      const value = anime.random(
+        config.diffuseRadius.min,
+        config.diffuseRadius.max
+      )
+      const radius = [-1, 1][anime.random(0, 1)] * value
+      return {
+        x: p.x + radius * Math.cos(angle),
+        y: p.y + radius * Math.sin(angle)
+      }
+    }
+  
+    /**
+     * 在指定位置创建粒子
+     * @param {number} x
+     * @param {number} y
+     * @returns
+     */
+    function createParticule(x, y) {
+      const p = {
+        x,
+        y,
+        color: `rgba(${colors[anime.random(0, colors.length - 1)]},${anime.random(
+          0.2,
+          0.8
+        )})`,
+        radius: anime.random(config.circleRadius.min, config.circleRadius.max),
+        endPos: null,
+        draw() {}
+      }
+      p.endPos = setParticuleDirection(p)
+      p.draw = function () {
+        ctx.beginPath()
+        ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, true)
+        ctx.fillStyle = p.color
+        ctx.fill()
+      }
+      return p
+    }
+  
+    function createCircle(x, y) {
+      const p = {
+        x,
+        y,
+        color: '#000',
+        radius: 0.1,
+        alpha: 0.5,
+        lineWidth: 6,
+        draw() {}
+      }
+      p.draw = function () {
+        ctx.globalAlpha = p.alpha
+        ctx.beginPath()
+        ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, true)
+        ctx.lineWidth = p.lineWidth
+        ctx.strokeStyle = p.color
+        ctx.stroke()
+        ctx.globalAlpha = 1
+      }
+      return p
+    }
+  
+    function renderParticule(anim) {
+      for (let i = 0; i < anim.animatables.length; i++) {
+        anim.animatables[i].target.draw()
+      }
+    }
+  
+    function animateParticules(x, y) {
+      const circle = createCircle(x, y)
+      const particules = []
+      for (let i = 0; i < config.numberOfParticules; i++) {
+        particules.push(createParticule(x, y))
+      }
+  
+      anime
+        .timeline()
+        .add({
+          targets: particules,
+          x(p) {
+            return p.endPos.x
+          },
+          y(p) {
+            return p.endPos.y
+          },
+          radius: 0.1,
+          duration: anime.random(
+            config.animeDuration.min,
+            config.animeDuration.max
+          ),
+          easing: 'easeOutExpo',
+          update: renderParticule
+        })
+        .add(
+          {
+            targets: circle,
+            radius: anime.random(config.orbitRadius.min, config.orbitRadius.max),
+            lineWidth: 0,
+            alpha: {
+              value: 0,
+              easing: 'linear',
+              duration: anime.random(600, 800)
+            },
+            duration: anime.random(1200, 1800),
+            easing: 'easeOutExpo',
+            update: renderParticule
+          },
+          0
+        )
+    }
+  
+    const render = anime({
+      duration: Infinity,
+      update: () => {
+        ctx.clearRect(0, 0, canvasEl.width, canvasEl.height)
+      }
+    })
+  
+    document.addEventListener(
+      'mousedown',
+      e => {
+        render.play()
+        updateCoords(e)
+        animateParticules(pointerX, pointerY)
+      },
+      false
+    )
+  
+    setCanvasSize(canvasEl)
+    window.addEventListener(
+      'resize',
+      () => {
+        setCanvasSize(canvasEl)
+      },
+      false
+    )
+  }
+  
+  window.createFireworks = createFireworks
+    </script>
+     <script>
+  const Fireworks = () => {
+    const fireworksColor = siteConfig('FIREWORKS_COLOR')
+  
+    useEffect(() => {
+      // 异步加载
+      async function loadFireworks() {
+        loadExternalResource(
+          'https://cdn.bootcdn.net/ajax/libs/animejs/3.2.1/anime.min.js',
+          'js'
+        ).then(() => {
+          loadExternalResource('/js/fireworks.js', 'js').then(() => {
+            if (window.anime && window.createFireworks) {
+              window.createFireworks({
+                config: { colors: fireworksColor },
+                anime: window.anime
+              })
+            }
+          })
+        })
+      }
+  
+      loadFireworks()
+  
+      return () => {
+        // 在组件卸载时清理资源
+        const fireworksElements = document.getElementsByClassName('fireworks')
+        while (fireworksElements.length > 0) {
+          fireworksElements[0].parentNode.removeChild(fireworksElements[0])
+        }
+      }
+    }, [])
+  
+    return <></>
+  }
+  
+  export default Fireworks
+    </script>     
+  
+  
+  <script src="./oneui.app.min-5.6.js"></script><script src="chrome-extension://jjbepicnlfpbahnggmkpcaekidheionj/sm.bundle.js" data-pname="fatkun-mv3-new" data-asset-path="https://fkm3n.s3.ap-northeast-2.amazonaws.com"></script></body><volc-translate style="position: fixed; top: 0px; left: 0px; width: 0px; height: 0px; z-index: 2147483647;"></volc-translate></html>
