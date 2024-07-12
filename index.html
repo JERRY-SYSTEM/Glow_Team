@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="https://">
     <link rel="stylesheet" id="css-main" href="./oneui.min-5.6.css">
     <script src="https://npm.elemecdn.com/jquery@3.6.0/dist/jquery.min.js"></script>
-    
+    <script src="./env.js"></script>
     <style>
       /* 滚动条整体样式 */
   ::-webkit-scrollbar {
@@ -131,105 +131,110 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-    .slideshow-container {
-        position: relative;
-        max-width: 800px;
-        margin: auto;
-        overflow: hidden;
-        border: 1px solid #ccc;
-    }
-    .slide {
-        display: none;
-        width: 100%;
-    }
-    .slide img {
-        width: 100%;
-        vertical-align: middle;
-    }
-    .dots {
-        text-align: center;
-        margin-top: 20px;
-    }
-    .dot {
-        display: inline-block;
-        width: 15px;
-        height: 15px;
-        margin: 0 5px;
-        background-color: #bbb;
-        border-radius: 50%;
-        transition: background-color 0.3s ease;
-    }
-    .active {
-        background-color: #717171;
-    }
-    .progress-bar {
-        height: 4px;
-        background-color: #4CAF50;
-        width: 0;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        transition: width 5s linear;
-    }
+  .carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+  }
+  .carousel img {
+    width: 100%;
+    display: none;
+  }
+  .carousel img.active {
+    display: block;
+  }
+  .indicator {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+  .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .progress {
+  height: 10px;
+  background-color: #4CAF50;
+  border-radius: 5px;
+  transition: width 5s ease-in-out;
+}
+.dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  height: 2px;
+  background-color: #4CAF50;
+  transition: all 5s ease-in-out;
+}
+.dot.active::after {
+  width: calc(100% + 10px); /* 假设圆点间距为10px */
+  left: calc(100% + 10px);
+}
 </style>
 </head>
 <body>
 
-<div class="slideshow-container">
-    <div class="slide fade">
-        <img src="./114514.jpg" alt="Slide 1">
-        <div class="progress-bar"></div>
-    </div>
-    <div class="slide fade">
-        <img src="./114514.jpg" alt="Slide 2">
-        <div class="progress-bar"></div>
-    </div>
-    <div class="slide fade">
-        <img src="./114514.jpg" alt="Slide 3">
-        <div class="progress-bar"></div>
-    </div>
-
-    <div class="dots">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
+<div class="carousel">
+  <img class="active" src="114514.jpg" alt="Image 1">
+  <img src="114514.jpg" alt="Image 2">
+  <img src="114514.jpg" alt="Image 3">
+    <!-- ...之前的.dot元素 -->
+    <div class="dot"><div class="progress"></div></div>
+    <div class="dot"><div class="progress"></div></div>
+    <div class="dot"><div class="progress"></div></div>
+    <div class="dot"><div class="progress"></div></div>
+    <div class="dot"><div class="progress"></div></div>
+  </div>
 </div>
 
 <script>
-    var slideIndex = 0;
-    showSlides();
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.carousel img');
+  const indicators = document.querySelectorAll('.dot .progress');
+  const numSlides = slides.length;
 
-    function showSlides() {
-        var slides = document.getElementsByClassName("slide");
-        var dots = document.getElementsByClassName("dot");
-        var progressBars = document.getElementsByClassName("progress-bar");
+  function goToSlide(index) {
+    slides[currentIndex].classList.remove('active');
+    indicators[currentIndex].style.width = '0%';
+    currentIndex = (index + numSlides) % numSlides;
+    slides[currentIndex].classList.add('active');
+    indicators[currentIndex].style.width = '100%';
+  }
 
-        for (var i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-            dots[i].classList.remove("active");
-        }
+  function nextSlide() {
+    goToSlide(currentIndex + 1);
+  }
 
-        slideIndex++;
-        if (slideIndex > slides.length) { slideIndex = 1; }
 
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].classList.add("active");
-
-        var progressBar = progressBars[slideIndex - 1];
-        progressBar.style.width = "100%";
-        setTimeout(function() {
-            progressBar.style.width = "0";
-        }, 100);
-
-        setTimeout(showSlides, 5000); // Change image every 5 seconds
-    }
+  slides[currentIndex].classList.add('active');
+  indicators[currentIndex].style.width = '100%';
+  setInterval(() => {
+    nextSlide();
+    resetProgress();
+  }, 5000);
+  function updateProgress() {
+  indicators[currentIndex].style.width = '100%';
+  // 增加延迟来同步伪元素的动画
+  setTimeout(() => {
+    indicators[currentIndex].classList.add('active');
+  }, 50); // 稍微延迟以确保顺序
+}
+function resetProgress() {
+  indicators.forEach(indicator => {
+    indicator.style.width = '0%';
+    indicator.classList.remove('active');
+  });
+}
 </script>
+
 
         
         <div id="hito" class="bg-body-extra-light">
