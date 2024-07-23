@@ -1,4 +1,4 @@
-# Glow Team 团队官网
+﻿# Glow Team 团队官网
 
 Glow Team是一款适用于团队、工作室等官网的模板。
 
@@ -34,6 +34,6 @@ Glow Team是一款适用于团队、工作室等官网的模板。
 
 ### 版权所有
 
-Jerry 2023
+Jerry 2024
 
-https://www.lovepcsys.top
+https://jerry.000708.xyz

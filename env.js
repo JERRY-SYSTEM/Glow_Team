@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 设置变量
  * 所有网站内容都在这里设置，无后台，请保证这个文件放在合适的直链储存
  * 下面的内容均为示例，请自行修改
@@ -15,8 +15,8 @@
 themecss = "https://pan.wike6.cn/assets/oneui/css/themes/$t$.min-5.5.css";
 
 //主题自带插件CDN加速链接
-//同上，如果没有条件的站长可以解压 CDN资源.7z 到当前目录下然后填./oneui.app.min-5.6.js
-oneuiapp = ["https://pan.wike6.cn/assets/oneui/js/oneui.app.min-5.6.js"];
+//同上，如果没有条件的站长可以解压 CDN资源.7z 到当前目录下然后填./oneui.app.min-5.8.js
+oneuiapp = ["./oneui.app.min-5.8.js"];
 
 
 
