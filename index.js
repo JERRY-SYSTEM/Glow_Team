@@ -2,15 +2,6 @@
  * 应用变量
  */
 $(function(){
-  //防XXS扒站
-  if (fxxs) {
-    $("body").append('<script src="https://npm.elemecdn.com/console-ban@5.0.0/dist/console-ban.min.js"></script><script>setTimeout(function(){ConsoleBan.init();},500);</script>');
-    $(document).contextmenu(function(e){e.preventDefault();}); //禁止鼠标右键
-    if (self != top) {top.location.href = self.location.href;} //禁止iframe镜像
-    $(document).keydown(function(e){
-      if (e.ctrlKey || e.keyCode >= 112 && e.keyCode <= 123) {e.preventDefault();}
-    }); //禁止ctrl组合键和F1-F12键
-  }
   //IE浏览器提示
   if (/*@cc_on!@*/ false || (!!window.MSInputMethodContext && !!document.documentMode)) {window.location.href = 'https://ssle.cn/check-browser-ie.html';}
   //主题CDN

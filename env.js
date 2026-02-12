@@ -9,14 +9,13 @@
  * CDN设置
  */
 
-//主题CDN加速链接目录
-//注意：越快的CDN就越费钱，请把下面的链接换成自己的CDN！如果没有条件的站长可以解压 CDN资源.7z 到当前目录下然后填./themes/$t$.min-5.6.css
+//主题CDN加速链接目录，可以填入自己CDN的链接
 //$t$代表主题名称，如amethyst
-themecss = "https://pan.wike6.cn/assets/oneui/css/themes/$t$.min-5.5.css";
+themecss = "./themes/$t$.min-5.12.css";
 
 //主题自带插件CDN加速链接
 //同上，如果没有条件的站长可以解压 CDN资源.7z 到当前目录下然后填./oneui.app.min-5.8.js
-oneuiapp = ["./oneui.app.min-5.8.js"];
+oneuiapp = ["./oneui.app.min-5.11.js"];
 
 
 
@@ -42,9 +41,8 @@ beiancode = "无备案";
 //添加板块：特点feature，一言hito，作品work，动态zone，成员member，联系contact，把不要的删除
 modules = ["feature","hito","work","zone","member","contact","flinks"];
 
-//防止XXS扒站
-//true开启，false关闭
-fxxs = true;
+//防止扒站
+//已废弃，由HTML_Protect替代，请修改.html文件内的<html_protect>标签
 
 //IE浏览器提示
 //true开启，false关闭
